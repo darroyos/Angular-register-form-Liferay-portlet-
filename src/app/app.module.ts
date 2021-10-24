@@ -7,11 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { MaterialModule } from './shared/material.module';
 import { CoreModule } from '@angular/flex-layout';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,7 +19,7 @@ import { CoreModule } from '@angular/flex-layout';
     MaterialModule.forRoot(),
     AuthModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
