@@ -1,0 +1,60 @@
+<mat-card class="card">
+  <mat-card-header>
+    <img mat-card-avatar src="/assets/liferay_icon.png" alt="" class="icon" />
+    <mat-card-title class="card-title">Formulario de registro</mat-card-title>
+  </mat-card-header>
+
+  <div
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    class="register-container"
+  >
+    <form [formGroup]="registerForm">
+      <mat-form-field fxLayout="row">
+        <input matInput formControlName="name" placeholder="Nombre" />
+      </mat-form-field>
+
+      <mat-form-field fxLayout="row">
+        <input matInput formControlName="surname" placeholder="Apellidos" />
+      </mat-form-field>
+
+      <mat-form-field fxLayout="row">
+        <mat-label>Fecha de nacimiento</mat-label>
+        <input matInput formControlName="birthDate" [matDatepicker]="picker" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field fxLayout="row">
+        <input
+          matInput
+          formControlName="email"
+          type="email"
+          placeholder="Correo electrónico"
+        />
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+
+      <re-captcha formControlName="recaptcha"></re-captcha>
+
+      <div
+        fxLayout="row wrap"
+        fxLayoutGap.gt-sm="2rem"
+        fxLayoutAlign="space-between"
+        class="register-actions"
+      >
+        <button mat-raised-button (click)="clearForm()" class="action-btn">
+          <mat-icon>clear</mat-icon>Limpiar
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="submit()"
+          class="action-btn"
+        >
+          <mat-icon>person_add</mat-icon>Registrarme
+        </button>
+      </div>
+    </form>
+  </div>
+</mat-card>
