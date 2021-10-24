@@ -11,6 +11,8 @@ import {
   RECAPTCHA_SETTINGS,
 } from 'ng-recaptcha';
 import { environment } from 'src/environments/environment';
+import { IRegisterService } from '../core/services/register/register.service';
+import { RegisterLocalStorageService } from '../core/services/register/register-localstorage.service';
 
 const globalSettings: RecaptchaSettings = {
   siteKey: environment.recaptchaSiteKey,
@@ -25,6 +27,7 @@ const globalSettings: RecaptchaSettings = {
   ],
   declarations: [AuthComponent],
   providers: [
+    { provide: IRegisterService, useClass: RegisterLocalStorageService },
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: globalSettings,

@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { NotificationService } from '../core/services/notification.service';
+import { IRegisterService } from '../core/services/register/register.service';
 
 @Component({
   selector: 'app-auth-page',
@@ -25,7 +26,8 @@ export class AuthComponent {
 
   constructor(
     private _fb: FormBuilder,
-    private _notificationService: NotificationService
+    private _notificationService: NotificationService,
+    private _registerService: IRegisterService
   ) {
     this.registerForm = this._fb.group({
       name: [null, Validators.required],
@@ -38,6 +40,7 @@ export class AuthComponent {
 
   submit(): void {
     if (this.registerForm.valid) {
+      this._registerService.register(this.registerForm.value);
       this._notificationService.open('✔️ Se ha registrado correctamente');
     } else {
       let hasEmptyFields = true;
