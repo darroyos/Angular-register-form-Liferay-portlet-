@@ -5,5 +5,5 @@ import { RegisterModel } from '../../models/register.model';
 export abstract class IRegisterService {
   constructor() {}
 
-  abstract register(value: RegisterModel): void;
+  abstract register(user: RegisterModel): boolean;
 }

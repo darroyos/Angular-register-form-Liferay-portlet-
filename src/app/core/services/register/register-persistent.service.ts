@@ -4,7 +4,7 @@ import { IRegisterService } from './register.service';
 
 @Injectable()
 export class RegisterPersistentService implements IRegisterService {
-  register(value: RegisterModel): void {
+  register(user: RegisterModel): boolean {
     throw new Error('Method not implemented.');
   }
 }
