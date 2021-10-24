@@ -40,15 +40,21 @@ export class AuthComponent {
 
   submit(): void {
     if (this.registerForm.valid) {
-      this._registerService.register(this.registerForm.value);
-      this._notificationService.open('✔️ Se ha registrado correctamente');
+      if (this._registerService.register(this.registerForm.value)) {
+        this._notificationService.open('✔️ Se ha registrado correctamente');
+      } else {
+        this._notificationService.open(
+          '❌ Ha ocurrido un error durante el registro'
+        );
+      }
     } else {
       let hasEmptyFields = true;
       for (const control in this.registerForm.controls) {
-        if (
+        const invalidControl =
           this.registerForm.controls[control].invalid &&
-          this.registerForm.controls[control].dirty
-        ) {
+          this.registerForm.controls[control].dirty;
+
+        if (invalidControl) {
           this._notificationService.open(`❌ ${this.errorMessages[control]}`);
           hasEmptyFields = false;
         }

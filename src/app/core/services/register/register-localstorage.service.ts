@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { RegisterModel } from '../../models/register.model';
 import { IRegisterService } from './register.service';
+import { v4 as uuid } from 'uuid';
 
 const LS_USERS_KEY = 'users';
 
 @Injectable()
 export class RegisterLocalStorageService implements IRegisterService {
-
   /**
    * Add user to the LocalStorage
-   * 
+   *
    * @param user User to register
    * @returns true if the operation completes successfully, false otherwise
    */
@@ -25,16 +25,18 @@ export class RegisterLocalStorageService implements IRegisterService {
 
   /**
    * Add user to the LocalStorage
-   * 
+   *
    * @param user User to register
    * @returns true if the operation completes successfully, false otherwise
    */
   private add(user: RegisterModel): boolean {
+    const userId = uuid(); // generate a unique ID for the user
+
     try {
-      const users: RegisterModel[] = JSON.parse(
+      const users: { [id: string]: RegisterModel } = JSON.parse(
         localStorage.getItem(LS_USERS_KEY)
       );
-      users.push(user);
+      users[userId] = user;
       localStorage.setItem(LS_USERS_KEY, JSON.stringify(users));
 
       return true;
@@ -47,7 +49,7 @@ export class RegisterLocalStorageService implements IRegisterService {
    * Init local storage
    */
   private initStorage(): void {
-    localStorage.setItem(LS_USERS_KEY, JSON.stringify([]));
+    localStorage.setItem(LS_USERS_KEY, JSON.stringify({}));
   }
 
   /**
@@ -59,7 +61,7 @@ export class RegisterLocalStorageService implements IRegisterService {
     if (users !== null) {
       try {
         const usersObj = JSON.parse(users);
-        return Array.isArray(usersObj);
+        return typeof usersObj === 'object';
       } catch (e) {
         return false;
       }
