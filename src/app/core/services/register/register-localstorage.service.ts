@@ -51,7 +51,7 @@ export class RegisterLocalStorageService implements IRegisterService {
   }
 
   /**
-   * Checks if LocalStorage has beein initialized
+   * Checks if LocalStorage has been initialized
    * @returns true if initialized, false otherwise
    */
   private isStorageInitialized(): boolean {
