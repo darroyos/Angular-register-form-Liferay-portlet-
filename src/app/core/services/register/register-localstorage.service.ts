@@ -14,6 +14,9 @@ export class RegisterLocalStorageService implements IRegisterService {
    * @returns true if the operation completes successfully, false otherwise
    */
   register(user: RegisterModel): boolean {
+    const registerDate = new Date();
+    user.registeredOn = registerDate;
+
     if (!this.isStorageInitialized()) {
       this.initStorage();
     }

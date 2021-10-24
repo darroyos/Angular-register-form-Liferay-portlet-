@@ -3,4 +3,5 @@ export interface RegisterModel {
   surname: string;
   birthDate: Date;
   email: string;
+  registeredOn?: Date;
 }
