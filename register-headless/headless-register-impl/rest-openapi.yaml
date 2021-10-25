@@ -15,12 +15,15 @@ components:
                 email:
                     description: The user email.
                     type: string
+                    format: email
                 birthDate:
                     description: The user birthdate.
                     type: string
+                    format: date-time
                 registeredOn:
                     description: The registered date.
                     type: string
+                    format: date-time
                 recaptcha:
                     description: CAPTCHA identifier.
                     type: string

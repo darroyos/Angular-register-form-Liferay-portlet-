@@ -7,6 +7,7 @@ import com.liferay.portal.vulcan.pagination.Page;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ServiceScope;
 
+import java.util.Date;
 import java.util.Hashtable;
 import java.util.Map;
 
@@ -29,6 +30,8 @@ public class FormUserResourceImpl extends BaseFormUserResourceImpl {
 			throw new IllegalArgumentException(
 					"Duplicate user ID " + user.getId());
 		}
+
+		user.setRegisteredOn(new Date());
 
 		_users.put(user.getId(), user);
 
