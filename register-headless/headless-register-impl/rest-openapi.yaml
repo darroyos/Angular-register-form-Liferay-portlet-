@@ -28,6 +28,12 @@ components:
                     description: CAPTCHA identifier.
                     type: string
             type: object
+            required:
+                - name
+                - surname
+                - email
+                - birthDate
+                - recaptcha
 openapi: 3.0.1
 info:
     description: "API for accessing registered users."

@@ -10,6 +10,7 @@ import org.osgi.service.component.annotations.ServiceScope;
 import java.util.Date;
 import java.util.Hashtable;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * @author David Arroyo
@@ -26,11 +27,9 @@ public class FormUserResourceImpl extends BaseFormUserResourceImpl {
 
 	@Override
 	public FormUser postRegisterForm(FormUser user) {
-		if (_users.containsKey(user.getId())) {
-			throw new IllegalArgumentException(
-					"Duplicate user ID " + user.getId());
-		}
+		UUID uuid = UUID.randomUUID();
 
+		user.setId(uuid.toString());
 		user.setRegisteredOn(new Date());
 
 		_users.put(user.getId(), user);
