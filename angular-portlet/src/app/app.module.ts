@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { MaterialModule } from './shared/material.module';
-import { CoreModule } from '@angular/flex-layout';
 import { APP_BASE_HREF } from '@angular/common';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { APP_BASE_HREF } from '@angular/common';
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
+    SharedModule,
     MaterialModule.forRoot(),
     AuthModule,
   ],

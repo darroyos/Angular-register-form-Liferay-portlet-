@@ -1,4 +1,5 @@
 export interface RegisterModel {
+  id?: string;
   name: string;
   surname: string;
   birthDate: Date;

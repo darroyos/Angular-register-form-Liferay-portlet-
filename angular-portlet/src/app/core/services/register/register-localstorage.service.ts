@@ -13,14 +13,14 @@ export class RegisterLocalStorageService implements IRegisterService {
    * @param user User to register
    * @returns true if the operation completes successfully, false otherwise
    */
-  register(user: RegisterModel): boolean {
+  register(user: RegisterModel): Promise<RegisterModel> {
     const registerDate = new Date();
     user.registeredOn = registerDate;
 
     if (!this.isStorageInitialized()) {
       this.initStorage();
     }
-    return this.add(user);
+    return Promise.resolve(this.add(user));
   }
 
   /**
@@ -29,8 +29,9 @@ export class RegisterLocalStorageService implements IRegisterService {
    * @param user User to register
    * @returns true if the operation completes successfully, false otherwise
    */
-  private add(user: RegisterModel): boolean {
+  private add(user: RegisterModel): RegisterModel {
     const userId = uuid(); // generate a unique ID for the user
+    user.id = userId;
 
     try {
       const users: { [id: string]: RegisterModel } = JSON.parse(
@@ -39,9 +40,9 @@ export class RegisterLocalStorageService implements IRegisterService {
       users[userId] = user;
       localStorage.setItem(LS_USERS_KEY, JSON.stringify(users));
 
-      return true;
+      return user;
     } catch (e) {
-      return false;
+      return null;
     }
   }
 
