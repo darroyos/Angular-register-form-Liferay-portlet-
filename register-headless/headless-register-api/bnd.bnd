@@ -1,0 +1,6 @@
+Bundle-Name: Darroyo Register API
+Bundle-SymbolicName: com.darroyo.headless.register.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.darroyo.headless.register.resource.v1_0,\
+	com.darroyo.headless.register.dto.v1_0

@@ -1,0 +1,77 @@
+components:
+    schemas:
+        FormUser:
+            description: Contains all of the data for a single user.
+            properties:
+                id:
+                    description: The user unique ID.
+                    type: string
+                name:
+                    description: The user name.
+                    type: string
+                surname:
+                    description: The user surname.
+                    type: string
+                email:
+                    description: The user email.
+                    type: string
+                birthDate:
+                    description: The user birthdate.
+                    type: string
+                registeredOn:
+                    description: The registered date.
+                    type: string
+                recaptcha:
+                    description: CAPTCHA identifier.
+                    type: string
+            type: object
+openapi: 3.0.1
+info:
+    description: "API for accessing registered users."
+    license:
+        name: "Apache 2.0"
+        url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+    title: "Headless register"
+    version: v1.0
+paths:
+    "/registerForm":
+        get:
+            operationId: getRegisterFormPage
+            tags: ["FormUser"]
+            description: Retrieves the list of registrations.
+            responses:
+                200:
+                    description: ""
+                    content:
+                        application/json:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/FormUser"
+                                type: array
+                        application/xml:
+                            schema:
+                                items:
+                                    $ref: "#/components/schemas/FormUser"
+                                type: array
+        post:
+            operationId: postRegisterForm
+            tags: ["FormUser"]
+            description: Create a new registration.
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/FormUser"
+                    application/xml:
+                        schema:
+                            $ref: "#/components/schemas/FormUser"
+            responses:
+                200:
+                    description: ""
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/FormUser"
+                        application/xml:
+                            schema:
+                                $ref: "#/components/schemas/FormUser"

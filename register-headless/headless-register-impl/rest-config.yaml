@@ -1,0 +1,9 @@
+apiDir: "../headless-register-api/src/main/java"
+apiPackagePath: "com.darroyo.headless.register"
+application:
+    baseURI: "/headless-register"
+    className: "HeadlessRegisterApplication"
+    name: "Darroyo.Headless.Register"
+author: "Jonah the son of Amittai"
+clientDir: "../headless-register-client/src/main/java"
+testDir: "../headless-register-test/src/testIntegration/java"

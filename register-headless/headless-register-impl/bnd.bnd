@@ -1,0 +1,3 @@
+Bundle-Name: Darroyo Register Foo Implementation
+Bundle-SymbolicName: com.darroyo.headless.register.impl
+Bundle-Version: 1.0.0
