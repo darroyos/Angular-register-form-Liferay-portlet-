@@ -1,0 +1,10 @@
+Bundle-Name: register-api
+Bundle-SymbolicName: com.darroyo.servicebuilder.register.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.darroyo.servicebuilder.register.exception,\
+	com.darroyo.servicebuilder.register.model,\
+	com.darroyo.servicebuilder.register.service,\
+	com.darroyo.servicebuilder.register.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../register-service/service.xml

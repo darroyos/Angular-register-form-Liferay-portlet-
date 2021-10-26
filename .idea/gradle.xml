@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/register-headless" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/register-headless" />
+            <option value="$PROJECT_DIR$/register-headless/headless-register-api" />
+            <option value="$PROJECT_DIR$/register-headless/headless-register-client" />
+            <option value="$PROJECT_DIR$/register-headless/headless-register-impl" />
+            <option value="$PROJECT_DIR$/register-headless/headless-register-test" />
+            <option value="$PROJECT_DIR$/register-headless/register" />
+            <option value="$PROJECT_DIR$/register-headless/register/register-api" />
+            <option value="$PROJECT_DIR$/register-headless/register/register-service" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
