@@ -7,6 +7,8 @@ The [Service Builder](https://help.liferay.com/hc/es/articles/360029028211-Intro
 ## Setup
 This portlet has been developed using [Liferay Portal CE 7.4 GA3](https://www.liferay.com/es/downloads-community). Specifically, the Tomcat Bundle has been used using the Hypersonic embedded database.
 
+To adapt the Angular application, [generator-liferay-js](https://www.npmjs.com/package/generator-liferay-js) has been used.
+
 ## Angular Portlet
 Location: `/register-form-liferay`
 
