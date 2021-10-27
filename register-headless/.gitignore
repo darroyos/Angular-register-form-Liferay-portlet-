@@ -1,13 +1,3 @@
-headless-register-api/src
-headless-register-client/src
-headless-register-impl/src/main/java/com/darroyo/headless/register/internal/graphql
-headless-register-impl/src/main/java/com/darroyo/headless/register/internal/jaxrs/application
-headless-register-impl/src/main/java/com/darroyo/headless/register/internal/resource/v1_0/Base*.java
-headless-register-impl/src/main/java/com/darroyo/headless/register/internal/resource/v1_0/OpenAPIResourceImpl.java
-headless-register-impl/src/main/java/com/darroyo/headless/register/internal/resource/v1_0/factory
-headless-register-impl/src/main/resources/OSGI-INF/liferay/rest/v1_0
-headless-register-test/src/testIntegration/java/com/darroyo/headless/register/resource/v1_0/test/Base*.java
-
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
