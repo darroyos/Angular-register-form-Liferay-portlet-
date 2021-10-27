@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:8080/o/headless-register/v1.0/',
-  storage: "local",
+  storage: 'local',
   recaptchaSiteKey: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI', // only for testing purposes
 };
 
